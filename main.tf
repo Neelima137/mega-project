@@ -97,8 +97,9 @@ resource "aws_eks_cluster" "project" {
 }
 
 resource "aws_eks_addon" "ebs_csi_driver" {
-  cluster_name    = aws_eks_cluster.project.name
-  addon_name      = "aws-ebs-csi-driver"
+  cluster_name  = aws_eks_cluster.project.name
+  addon_name    = "aws-ebs-csi-driver"
+  addon_version = "v1.47.0-eksbuild.1"
   resolve_conflicts_on_create = "OVERWRITE"
   resolve_conflicts_on_update = "OVERWRITE"
 }
