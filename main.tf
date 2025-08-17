@@ -185,3 +185,7 @@ resource "aws_iam_role_policy_attachment" "project_node_group_ebs_policy" {
   role       = aws_iam_role.project_node_group_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
 }
+resource "aws_iam_role_policy_attachment" "project_cluster_ebs_policy" {
+  role       = aws_iam_role.project_cluster_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+}
